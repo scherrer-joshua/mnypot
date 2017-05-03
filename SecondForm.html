@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var dropThing, textThing;
+function submissions(){
+ dropThing = document.getElementById("mySelect").value;
+ console.log(dropThing);
+}
+
+function myFunction() {
+    textThing = document.getElementById("frm1").submit();
+    console.log(textThing);
+}
+
+</script>
+</head>
+<body>
+
+<p>With the above data in mind, please use the spaces below to tell us where you'd like to see your state spend its tax revenue.</p>
+
+<form>
+<select id="mySelect">
+  <option>Apple</option>
+  <option>Pear</option>
+  <option>Banana</option>
+  <option>Orange</option>
+</select>
+  Thing1: <input type="text" name="fname"><br>
+<br>
+<select id="mySelect">
+  <option>Apple</option>
+  <option>Pear</option>
+  <option>Banana</option>
+  <option>Orange</option>
+</select>
+  Thing2: <input type="text" name="lname"><br>
+<br>
+<select id="mySelect">
+  <option>Apple</option>
+  <option>Pear</option>
+  <option>Banana</option>
+  <option>Orange</option>
+</select>
+    Thing3: <input type="text" name="lname"><br>
+
+<input type="button" onclick="myFunction()" value="Submit Text">
+
+<br><br>
+
+
+
+<input type="button" onclick="submissions()" value="Submit Choice">
+
+</form>
+
+</body>
+</html>
