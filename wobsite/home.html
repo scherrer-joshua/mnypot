@@ -8,14 +8,148 @@
     </head>    
     <body>
         <div>
-            <p> Vote! </p>
+            <p> Observe! </p>
         </div>    
         <div id="canvas-holder" style="width:40%">
-        <canvas id="chart-area" />
-    </div>
-    <button id="randomizeData">Randomize Data</button>
+            <canvas id="chart-area" />
+        </div>
+        <div id="secondForm">
+            <form>
+<select id="mySelect">
+  <option>Infrastructure</option>
+  <option>Education</option>
+  <option>Health Care</option>
+  <option>Public Transportation</option>
+  <option>Economic Development</option>
+  <option>Parks and Recreation</option>
+  <option>Pension/Health Benefits to Public Employees</option>
+  <option>Assistance to Low-Income Households</option>
+  <option>Corrections</option>
+  <option>Urban Housing</option>
+</select>
+  % of total tax revenue allocated: <input type="text" name="fname"><br>
+<br>
+<select id="mySelect">
+  <option>Infrastructure</option>
+  <option>Education</option>
+  <option>Health Care</option>
+  <option>Public Transportation</option>
+  <option>Economic Development</option>
+  <option>Parks and Recreation</option>
+  <option>Pension/Health Benefits to Public Employees</option>
+  <option>Assistance to Low-Income Households</option>
+  <option>Corrections</option>
+  <option>Urban Housing</option>
+</select>
+  % of total tax revenue allocated: <input type="text" name="lname"><br>
+<br>
+<select id="mySelect">
+  <option>Infrastructure</option>
+  <option>Education</option>
+  <option>Health Care</option>
+  <option>Public Transportation</option>
+  <option>Economic Development</option>
+  <option>Parks and Recreation</option>
+  <option>Pension/Health Benefits to Public Employees</option>
+  <option>Assistance to Low-Income Households</option>
+  <option>Corrections</option>
+  <option>Urban Housing</option>
+</select>
+    % of total tax revenue allocated: <input type="text" name="lname"><br>
+<br>
+<select id="mySelect">
+  <option>Infrastructure</option>
+  <option>Education</option>
+  <option>Health Care</option>
+  <option>Public Transportation</option>
+  <option>Economic Development</option>
+  <option>Parks and Recreation</option>
+  <option>Pension/Health Benefits to Public Employees</option>
+  <option>Assistance to Low-Income Households</option>
+  <option>Corrections</option>
+  <option>Urban Housing</option>
+</select>
+  % of total tax revenue allocated: <input type="text" name="lname"><br>
+<br>
+<select id="mySelect">
+  <option>Infrastructure</option>
+  <option>Education</option>
+  <option>Health Care</option>
+  <option>Public Transportation</option>
+  <option>Economic Development</option>
+  <option>Parks and Recreation</option>
+  <option>Pension/Health Benefits to Public Employees</option>
+  <option>Assistance to Low-Income Households</option>
+  <option>Corrections</option>
+  <option>Urban Housing</option>
+</select>
+  % of total tax revenue allocated: <input type="text" name="lname"><br>
+<br>
+<select id="mySelect">
+  <option>Infrastructure</option>
+  <option>Education</option>
+  <option>Health Care</option>
+  <option>Public Transportation</option>
+  <option>Economic Development</option>
+  <option>Parks and Recreation</option>
+  <option>Pension/Health Benefits to Public Employees</option>
+  <option>Assistance to Low-Income Households</option>
+  <option>Corrections</option>
+  <option>Urban Housing</option>
+</select>
+  % of total tax revenue allocated: <input type="text" name="lname"><br>
+<br>
+<select id="mySelect">
+  <option>Infrastructure</option>
+  <option>Education</option>
+  <option>Health Care</option>
+  <option>Public Transportation</option>
+  <option>Economic Development</option>
+  <option>Parks and Recreation</option>
+  <option>Pension/Health Benefits to Public Employees</option>
+  <option>Assistance to Low-Income Households</option>
+  <option>Corrections</option>
+  <option>Urban Housing</option>
+</select>
+  % of total tax revenue allocated: <input type="text" name="lname"><br>
+<br>
+<select id="mySelect">
+  <option>Infrastructure</option>
+  <option>Education</option>
+  <option>Health Care</option>
+  <option>Public Transportation</option>
+  <option>Economic Development</option>
+  <option>Parks and Recreation</option>
+  <option>Pension/Health Benefits to Public Employees</option>
+  <option>Assistance to Low-Income Households</option>
+  <option>Corrections</option>
+  <option>Urban Housing</option>
+</select>
+  % of total tax revenue allocated: <input type="text" name="lname"><br>
+<br>
+<select id="mySelect">
+  <option>Infrastructure</option>
+  <option>Education</option>
+  <option>Health Care</option>
+  <option>Public Transportation</option>
+  <option>Economic Development</option>
+  <option>Parks and Recreation</option>
+  <option>Pension/Health Benefits to Public Employees</option>
+  <option>Assistance to Low-Income Households</option>
+  <option>Corrections</option>
+  <option>Urban Housing</option>
+</select>
+  % of total tax revenue allocated: <input type="text" name="lname"><br>
+<br>
+
+
+<input type="button" onclick="submissions()" value="Submit">
+
+</form>
+        </div>
+    <!--<button id="randomizeData">Randomize Data</button>
     <button id="addDataset">Add Dataset</button>
-    <button id="removeDataset">Remove Dataset</button>
+    <button id="removeDataset">Remove Dataset</button>-->
     <script>
     var randomScalingFactor = function() {
         return Math.round(Math.random() * 100);
@@ -24,31 +158,40 @@
     var config = {
         type: 'pie',
         data: {
+            labels: [
+                "Infrastructure",
+                "Education",
+                "Health Care",
+                "Libraries",
+                "Public Transportation",
+                "Economic Development",
+                "Parks and Recreation",
+                "Pension/Health Benefits for Public Employees",
+                "Assistance to low-income households",
+                "Corrections",
+                "Urban Housing",
+            ],
             datasets: [{
                 data: [
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
+                    1,1,1,1,1,1,1,1,1,1,1
                 ],
                 backgroundColor: [
-                    window.chartColors.red,
-                    window.chartColors.orange,
-                    window.chartColors.yellow,
-                    window.chartColors.green,
-                    window.chartColors.blue,
+                    '#43A60A',
+                    '#572725',
+                    '#0E9C9C',
+                    '#D1B91B',
+                    '#ED3743',
+                    '#BF2BCF',
+                    '#7ABF98',
+                    '#ED47D7',
+                    '#584FDB',
+                    '#A4D93B',
+                    '#EDA109',
                 ],
-                label: 'Dataset 1'
+                label: 'Taxes for' + 'State1'
             }],
-            labels: [
-                "Red",
-                "Orange",
-                "Yellow",
-                "Green",
-                "Blue"
-            ]
         },
+
         options: {
             responsive: true
         }
