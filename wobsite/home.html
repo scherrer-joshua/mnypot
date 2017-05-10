@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="node_modules/chart.js/dist/Chart.bundle.js"></script>
         <!--<script src="pie.js"></script>-->
         <script src="node_modules/chart.js/samples/utils.js"></script>
-    </head>    
-    <body>
-        <div>
-        <p>Please use the spaces to tell us where you'd like to see your state spend its tax revenue, and what proportion of revenue should be spent in each area.</p>        </div>    
-        <div id="canvas-holder" style="width:40%">
-            <canvas id="chart-area" />
-        </div>
-        <div id="secondForm">
-            <form>
+  </head>    
+  <body>
+    <div>
+      <p>Please use the spaces to tell us where you'd like to see your state spend its tax revenue,</p> 
+      <p>and what proportion of revenue should be spent in each area.</p>        
+    </div>    
+      <div id="canvas-holder" style="width:40%">
+        <canvas id="chart-area" />
+      </div>
+      <div id="secondForm">
+<form action="OurCollectedDataVis.html" method="post" id="ResponseForm">
 <select id="mySelect">
+  <option></option>
   <option>Infrastructure</option>
   <option>Education</option>
   <option>Health Care</option>
@@ -26,9 +29,9 @@
   <option>Corrections</option>
   <option>Urban Housing</option>
 </select>
-  % of total tax revenue allocated: <input type="text" name="fname"><br>
-<br>
+<input type="number" name="% of total tax revenue" min="1" max="100" id="prop">
 <select id="mySelect">
+  <option></option>
   <option>Infrastructure</option>
   <option>Education</option>
   <option>Health Care</option>
@@ -40,9 +43,9 @@
   <option>Corrections</option>
   <option>Urban Housing</option>
 </select>
-  % of total tax revenue allocated: <input type="text" name="lname"><br>
-<br>
+<input type="number" name="% of total tax revenue" min="1" max="100" id="prop">
 <select id="mySelect">
+  <option></option>
   <option>Infrastructure</option>
   <option>Education</option>
   <option>Health Care</option>
@@ -54,9 +57,9 @@
   <option>Corrections</option>
   <option>Urban Housing</option>
 </select>
-    % of total tax revenue allocated: <input type="text" name="lname"><br>
-<br>
+<input type="number" name="% of total tax revenue" min="1" max="100" id="prop">
 <select id="mySelect">
+  <option></option>
   <option>Infrastructure</option>
   <option>Education</option>
   <option>Health Care</option>
@@ -68,9 +71,9 @@
   <option>Corrections</option>
   <option>Urban Housing</option>
 </select>
-  % of total tax revenue allocated: <input type="text" name="lname"><br>
-<br>
+<input type="number" name="% of total tax revenue" min="1" max="100" id="prop">
 <select id="mySelect">
+  <option></option>
   <option>Infrastructure</option>
   <option>Education</option>
   <option>Health Care</option>
@@ -82,9 +85,9 @@
   <option>Corrections</option>
   <option>Urban Housing</option>
 </select>
-  % of total tax revenue allocated: <input type="text" name="lname"><br>
-<br>
+<input type="number" name="% of total tax revenue" min="1" max="100" id="prop">
 <select id="mySelect">
+  <option></option>
   <option>Infrastructure</option>
   <option>Education</option>
   <option>Health Care</option>
@@ -96,9 +99,9 @@
   <option>Corrections</option>
   <option>Urban Housing</option>
 </select>
-  % of total tax revenue allocated: <input type="text" name="lname"><br>
-<br>
+<input type="number" name="% of total tax revenue" min="1" max="100" id="prop">
 <select id="mySelect">
+  <option></option>
   <option>Infrastructure</option>
   <option>Education</option>
   <option>Health Care</option>
@@ -110,9 +113,9 @@
   <option>Corrections</option>
   <option>Urban Housing</option>
 </select>
-  % of total tax revenue allocated: <input type="text" name="lname"><br>
-<br>
+<input type="number" name="% of total tax revenue" min="1" max="100" id="prop">
 <select id="mySelect">
+  <option></option>
   <option>Infrastructure</option>
   <option>Education</option>
   <option>Health Care</option>
@@ -124,9 +127,9 @@
   <option>Corrections</option>
   <option>Urban Housing</option>
 </select>
-  % of total tax revenue allocated: <input type="text" name="lname"><br>
-<br>
+<input type="number" name="% of total tax revenue" min="1" max="100" id="prop">
 <select id="mySelect">
+  <option></option>
   <option>Infrastructure</option>
   <option>Education</option>
   <option>Health Care</option>
@@ -138,9 +141,21 @@
   <option>Corrections</option>
   <option>Urban Housing</option>
 </select>
-  % of total tax revenue allocated: <input type="text" name="lname"><br>
-<br>
-
+<input type="number" name="% of total tax revenue" min="1" max="100" id="prop">
+<select id="mySelect">
+  <option></option>
+  <option>Infrastructure</option>
+  <option>Education</option>
+  <option>Health Care</option>
+  <option>Public Transportation</option>
+  <option>Economic Development</option>
+  <option>Parks and Recreation</option>
+  <option>Pension/Health Benefits to Public Employees</option>
+  <option>Assistance to Low-Income Households</option>
+  <option>Corrections</option>
+  <option>Urban Housing</option>
+</select>
+<input type="number" name="% of total tax revenue" min="1" max="100" id="prop">
 
 <input type="button" onclick="submissions()" value="Submit">
 
@@ -150,6 +165,39 @@
     <button id="addDataset">Add Dataset</button>
     <button id="removeDataset">Remove Dataset</button>-->
     <script>
+    var dataSectors;
+    var dataProportions;
+    var dataSectorsArray;
+    var dataProportionsArray;
+    var dataSs;
+    var dataPs;
+
+    function dataSectorStuff(){
+      dataSectors = document.getElementById("mySelect");
+      dataSectorsArray = [];
+      for (var i=0; i < dataSectors.length; i++){
+        dataSectorsArray.push(dataSectors.options[i].value);
+      };
+    };
+
+    function dataPropStuff(){
+      dataProportions = document.getElementById("prop");
+      dataProportionsArray = [];
+      for (var i=0; i < dataProportions.length; i++){
+        dataProportionsArray.push(dataProportions.options[i].value);
+      };
+    };
+
+    function submissions(){
+      // dataSs = document.getElementById("mySelect").value
+      // dataPs = document.getElementById("prop").value
+      dataSectorStuff();
+      dataPropStuff();
+      console.log(dataSectorStuff.value);
+      console.log(dataPropStuff.value);
+    };
+
+
     var randomScalingFactor = function() {
         return Math.round(Math.random() * 100);
     };
