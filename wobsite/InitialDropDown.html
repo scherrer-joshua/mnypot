@@ -2,11 +2,24 @@
 <html>
 <head>
 <script>
-// var thing;
-// function submissions(){
-//  thing = document.getElementById("mySelect").value;
-//  console.log(thing);
-// }
+var thing;
+var States;
+var StateNames;
+
+function submissions(){
+ thing = document.getElementById("mySelect").value;
+ console.log(thing);
+dataStuff();
+};
+
+function dataStuff(){
+  StateNames = [];
+  States = document.getElementById("mySelect");
+  for (var i=0 ; i < States.length; i++)
+  {
+    StateNames.push(States.options[i].value);
+  };
+};
 </script>
 </head>
 <body>
