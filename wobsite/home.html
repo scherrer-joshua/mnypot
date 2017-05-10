@@ -16,26 +16,26 @@
       </div>
       <div id="secondForm">
 <form action="OurCollectedDataVis.html" method="post" id="ResponseForm">
-Infrastructure:
-<input type="number" name="Infrastructure" min="0" max="100" id="prop"><br>
-Education:
-<input type="number" name="Education" min="0" max="100" id="prop"><br>
-Healthcare:
-<input type="number" name="Healthcare" min="0" max="100" id="prop"><br>
-Public Transportation:
-<input type="number" name="Public Transportation" min="0" max="100" id="prop"><br>
-Economic Development:
-<input type="number" name="Economic Development" min="0" max="100" id="prop"><br>
-Parks and Recreation:
-<input type="number" name="Parks and Recreation" min="0" max="100" id="prop"><br>
-Pension/Health Benefits to Public Employees:
-<input type="number" name="Pension/Health Benefits to Public Employees" min="0" max="100" id="prop"><br>
-Assistance to Low-Income Households:
-<input type="number" name="Assistance to Low-Income Households" min="0" max="100" id="prop"><br>
-Corrections:
-<input type="number" name="Corrections" min="0" max="100" id="prop"><br>
-Urban Housing:
-<input type="number" name="Urban Housing" min="0" max="100" id="prop"><br>
+Infrastructure:<br>
+<input type="text" name="Infrastructure" id="prop"><br>
+Education:<br>
+<input type="text" name="Education" id="prop"><br>
+Healthcare:<br>
+<input type="text" name="Healthcare" id="prop"><br>
+Public Transportation:<br>
+<input type="text" name="Public Transportation" id="prop"><br>
+Economic Development:<br>
+<input type="text" name="Economic Development" id="prop"><br>
+Parks and Recreation:<br>
+<input type="text" name="Parks and Recreation" id="prop"><br>
+Pension/Health Benefits to Public Employees:<br>
+<input type="text" name="Pension/Health Benefits to Public Employees" id="prop"><br>
+Assistance to Low-Income Households:<br>
+<input type="text" name="Assistance to Low-Income Households" id="prop"><br>
+Corrections:<br>
+<input type="text" name="Corrections" id="prop"><br>
+Urban Housing:<br>
+<input type="text" name="Urban Housing" id="prop"><br>
 
 <input type="button" onclick="submissions()" value="Submit">
 </form>
@@ -44,29 +44,20 @@ Urban Housing:
     <button id="addDataset">Add Dataset</button>
     <button id="removeDataset">Remove Dataset</button>-->
     <script>
-    // var Proportions;
-    // var PropArray;
-    var FormResults;
-
-    // function dataStuff(){
-    //   PropArray = [];
-    //   Proportions = document.getElementById("prop");
-    //   for (var i=0 ; i < Proportions.length; i++)
-    //   {
-    //     PropArray.push(Proportions.value);
-    //   };
-    //   console.log(PropArray);
-    // };
-
+    var thing;
     function submissions(){
-      FormResults = document.getElementById("ResponseForm").elements;
-      for(var i=0, element; element = FormResults[i++];){
-        if(element.type === "number")
-          console.log(FormResults);
-      };
-      // console.log(FormResults);
-      // dataStuff();      
+      thing = document.getElementById("prop").value;
+      console.log(thing);
+      dataStuff();
     };
+    // function dataStuff(){
+    //   PropData = [];
+    //   Props = document.getElementById("mySelect");
+    //   for (var i=0 ; i < Props.length; i++)
+    //   {
+    //    PropData.push(Props[i].value);
+    //   };
+    // };
 
     var randomScalingFactor = function() {
         return Math.round(Math.random() * 100);
