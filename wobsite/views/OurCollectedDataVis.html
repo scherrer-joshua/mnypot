@@ -48,17 +48,14 @@ var config = {
                 label: 'Suggested proportions for spending the tax revenue of' + 'State1'
             }],
         },
-
         options: {
             responsive: true
         }
     };
-
     window.onload = function() {
         var ctx = document.getElementById("chart-area").getContext("2d");
         window.myPie = new Chart(ctx, config);
     };
-
 </script>
 
 </html>

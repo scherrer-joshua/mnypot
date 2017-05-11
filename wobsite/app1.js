@@ -111,6 +111,7 @@ app.get('/userdata', function (req, res) {
     ], function(err, result){
       if (err) return res.send("500 error");
       if (!result) return res.send("No data on this state");
+      result = result[0];
       res.render('OurCollectedDataVis', {data: JSON.stringify(UserAgg(result))});
     });
     
