@@ -22,30 +22,30 @@
 </div> 
 
 <div id="AnsweringForm">
-  <form action="OurCollectedDataVis.html" method="post" id="ResponseForm">
+  <form action="userdata" method="get" id="ResponseForm">
     <input type="hidden" name="state" value="{{statename}}">
     Infrastructure:<br>
-    <input type="number" min="0" max="100" name="Infrastructure" id="prop1"><br>
+    <input type="number" min="0" max="100" name="infrastructure" id="prop1"><br>
     Education:<br>
-    <input type="number" min="0" max="100" name="Education" id="prop2"><br>
+    <input type="number" min="0" max="100" name="education" id="prop2"><br>
     Healthcare:<br>
-    <input type="number" min="0" max="100" name="Healthcare" id="prop3"><br>
+    <input type="number" min="0" max="100" name="healthcare" id="prop3"><br>
     Libraries:<br>
-    <input type="number" min="0" max="100" name="Libraries" id="prop4"><br>
+    <input type="number" min="0" max="100" name="libraries" id="prop4"><br>
     Public Transportation:<br>
-    <input type="number" min="0" max="100" name="Public Transportation" id="prop5"><br>
+    <input type="number" min="0" max="100" name="publictransportation" id="prop5"><br>
     Economic Development:<br>
-    <input type="number" min="0" max="100" name="Economic Development" id="prop6"><br>
+    <input type="number" min="0" max="100" name="economicdevelopment" id="prop6"><br>
     Parks and Recreation:<br>
-    <input type="number" min="0" max="100" name="Parks and Recreation" id="prop7"><br>
+    <input type="number" min="0" max="100" name="parksandrecreation" id="prop7"><br>
     Pension/Health Benefits to Public Employees:<br>
-    <input type="number" min="0" max="100" name="Pension/Health Benefits to Public Employees" id="prop8"><br>
+    <input type="number" min="0" max="100" name="pensions" id="prop8"><br>
     Assistance to Low-Income Households:<br>
-    <input type="number" min="0" max="100" name="Assistance to Low-Income Households" id="prop9"><br>
+    <input type="number" min="0" max="100" name="lowincomeassistance" id="prop9"><br>
     Corrections:<br>
-    <input type="number" min="0" max="100" name="Corrections" id="prop10"><br>
+    <input type="number" min="0" max="100" name="corrections" id="prop10"><br>
     Urban Housing:<br>
-    <input type="number" min="0" max="100" name="Urban Housing" id="prop11"><br>
+    <input type="number" min="0" max="100" name="urbanhousing" id="prop11"><br>
     <input type="submit">
   </form>
 </div>
@@ -87,17 +87,11 @@
         type: 'pie',
         data: {
             labels: [
-                "Infrastructure",
-                "Education",
-                "Health Care",
-                "Libraries",
-                "Public Transportation",
-                "Economic Development",
-                "Parks and Recreation",
-                "Pension/Health Benefits for Public Employees",
-                "Assistance to low-income households",
-                "Corrections",
-                "Urban Housing",
+                "Property",
+                "Sales",
+                "License",
+                "Income",
+                "Other",
             ],
             datasets: [{
                 data: {{data}},
