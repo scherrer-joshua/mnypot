@@ -1,6 +1,23 @@
 var mustacheExpress = require('mustache-express');
 var express = require('express');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/Project');
 var app = express()
+
+var dataSchema = mongoose.Schema({
+    StateCode: String,
+    Total: Number,
+    Property: Number,
+    Sales: Number,
+    License: Number,
+    Income: Number,
+    Other: Number,
+});
+dataSchema.methods.toArray = function(){
+    return [this.Property, this.Sales, this.License, this.Income, this.Other];
+}
+
+var Data = mongoose.model("state", dataSchema);
 
 app.use(express.static('static'))
 
@@ -13,12 +30,15 @@ app.get('/', function (req, res) {
 })
 
 app.get('/taxdata', function (req, res) {
-  var data = [1,1,1,1,1,1,1,1,1,1,1]; 
-
-  res.render('home', {
-    data: JSON.stringify(data),
-    statename: req.param("state")
-  });
+  Data.findOne({
+    StateCode: req.param("state") 
+  }, function(err, datum){
+    if (err) return console.error(err);
+    res.render('home', {
+      data: JSON.stringify(datum.toArray()),
+      statename: req.param("state")
+    })
+  }); 
 })
 
 app.get('/closing', function (req, res) {
