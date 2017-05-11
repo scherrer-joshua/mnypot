@@ -3,14 +3,14 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="node_modules/chart.js/dist/Chart.bundle.js"></script>
-  <script src="node_modules/chart.js/samples/utils.js"></script>
+  <script src="Chart.bundle.js"></script>
+  <script src="utils.js"></script>
 </head> 
 
 <body>
 
 <div>
-  <p>This pie chart shows how your state currently uses its tax revenue across 11 main areas.</p>        
+  <p>This pie chart shows how the various ways your state collects tax revenue.</p>        
 </div>    
 
 <div id="canvas-holder" style="width:40%">
@@ -18,11 +18,12 @@
 </div>
 
 <div>
-  <p>Now it's time for your voice to be heard! Use the form below to show how YOU think your state should divide the pie<br>Please use the spaces below to enter your percentages, and fill in "0" for areas you'd leave blank.<br>Once all answers are filled in, click submit!</p>       
+  <p>Now it's time for your voice to be heard! In the form below, we've provided the 11 most popular areas for state spending. Use the spaces provided to show how your state should spend its budget.<br>Fill in "0" for areas you'd like to leave blank.<br>Once all answers are filled in, click submit!</p>       
 </div> 
 
 <div id="AnsweringForm">
   <form action="OurCollectedDataVis.html" method="post" id="ResponseForm">
+    <input type="hidden" name="state" value="{{statename}}">
     Infrastructure:<br>
     <input type="number" min="0" max="100" name="Infrastructure" id="prop1"><br>
     Education:<br>
@@ -45,7 +46,7 @@
     <input type="number" min="0" max="100" name="Corrections" id="prop10"><br>
     Urban Housing:<br>
     <input type="number" min="0" max="100" name="Urban Housing" id="prop11"><br>
-    <button type="button" onclick="submissions()">Submit</button>
+    <input type="submit">
   </form>
 </div>
 
@@ -53,34 +54,34 @@
     <button id="addDataset">Add Dataset</button>
     <button id="removeDataset">Remove Dataset</button>-->
   <script>
-    var Prop1;  
-    var Prop2;
-    var Prop3;    
-    var Prop4;
-    var Prop5;
-    var Prop6;
-    var Prop7;
-    var Prop8;
-    var Prop9;
-    var Prop10;
-    var Prop11;
-    var PropData;
+    // var Prop1;  
+    // var Prop2;
+    // var Prop3;    
+    // var Prop4;
+    // var Prop5;
+    // var Prop6;
+    // var Prop7;
+    // var Prop8;
+    // var Prop9;
+    // var Prop10;
+    // var Prop11;
+    // var PropData;
 
-    function submissions(){
-    var Prop1 = document.getElementById("prop1").value; 
-    var Prop2 = document.getElementById("prop2").value;
-    var Prop3 = document.getElementById("prop3").value;
-    var Prop4 = document.getElementById("prop4").value;
-    var Prop5 = document.getElementById("prop5").value;
-    var Prop6 = document.getElementById("prop6").value;
-    var Prop7 = document.getElementById("prop7").value;
-    var Prop8 = document.getElementById("prop8").value;
-    var Prop9 = document.getElementById("prop9").value;
-    var Prop10 = document.getElementById("prop10").value;
-    var Prop11 = document.getElementById("prop11").value;
-    var PropData = [Prop1, Prop2, Prop3, Prop4, Prop5, Prop6, Prop7, Prop8, Prop9, Prop10, Prop11];
-    console.log(PropData);
-    };
+    // function submissions(){
+    // var Prop1 = document.getElementById("prop1").value; 
+    // var Prop2 = document.getElementById("prop2").value;
+    // var Prop3 = document.getElementById("prop3").value;
+    // var Prop4 = document.getElementById("prop4").value;
+    // var Prop5 = document.getElementById("prop5").value;
+    // var Prop6 = document.getElementById("prop6").value;
+    // var Prop7 = document.getElementById("prop7").value;
+    // var Prop8 = document.getElementById("prop8").value;
+    // var Prop9 = document.getElementById("prop9").value;
+    // var Prop10 = document.getElementById("prop10").value;
+    // var Prop11 = document.getElementById("prop11").value;
+    // var PropData = [Prop1, Prop2, Prop3, Prop4, Prop5, Prop6, Prop7, Prop8, Prop9, Prop10, Prop11];
+    // console.log(PropData);
+    // };
 
     var config = {
         type: 'pie',
@@ -99,9 +100,7 @@
                 "Urban Housing",
             ],
             datasets: [{
-                data: [
-                    1,1,1,1,1,1,1,1,1,1,1
-                ],
+                data: {{data}},
                 backgroundColor: [
                     '#43A60A',
                     '#572725',
