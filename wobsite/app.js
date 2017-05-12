@@ -68,10 +68,6 @@ app.get('/taxdata', function (req, res) {
   }); 
 })
 
-app.get('/closing', function (req, res) {
-  res.render('ClosingPage');
-})
-
 app.get('/userdata', function (req, res) {
   console.log([(req.param('infrastructure')), (req.param('education')), (req.param('healthcare')), (req.param('libraries')), (req.param('publictransportation')), (req.param('economicdevelopment')), (req.param('parksandrecreation')), (req.param('pensions')), (req.param('lowincomeassistance')), (req.param('corrections')), (req.param('urbanhousing'))]);
   if ((Number(req.param('infrastructure'))+Number(req.param('education'))+Number(req.param('healthcare'))+Number(req.param('libraries'))+Number(req.param('publictransportation'))+Number(req.param('economicdevelopment'))+Number(req.param('parksandrecreation'))+Number(req.param('pensions'))+Number(req.param('lowincomeassistance'))+Number(req.param('corrections'))+Number(req.param('urbanhousing')))!=100)
