@@ -1,5 +1,8 @@
 This is the README.txt file for Team MoneyPot's Final Project for 1.00-Spring 2017
 
+
+HIGH-LEVEL OVERVIEW:
+
 Our project idea was to design an interactive web service that allowed people to provide data about where they want their particular state of residence to spend its tax revenue. 
 
 This project has 3 different web pages associated with it:
