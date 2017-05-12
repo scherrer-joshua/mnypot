@@ -5,6 +5,8 @@ Anthony Sciarretta and Joshua Scherrer
 
 Special thanks to Lucas Morales and Nina Lutz for their help and advice regarding our various coding misaps along the way
 
+GitHub link: https://github.com/scherrer-joshua/mnypot
+
 
 HIGH-LEVEL OVERVIEW:
 
