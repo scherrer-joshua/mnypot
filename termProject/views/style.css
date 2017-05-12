@@ -1,0 +1,32 @@
+small {
+    display: block;
+    margin-top: 1em;
+}
+
+#AnsweringForm {
+    position: absolute;
+    top: 25%;
+    width: 45%;
+    left: 50%;
+}
+
+#canvas-holder {
+    width: 40%;
+}
+
+#directions {
+    position: absolute;
+    top: 0%;
+    width: 40%;
+    height: 20%;
+    left: 50%;
+}
+
+body {
+    background: #d6d6c2;
+}
+
+#ResponseForm input {
+    position: absolute;
+    right: 0%;
+}

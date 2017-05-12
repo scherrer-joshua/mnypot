@@ -10,42 +10,43 @@
 <body>
 
 <div>
-  <p>This pie chart shows how the various ways your state collects tax revenue.</p>        
+  <h2>Tax Revenue Collected by your State</h2>        
 </div>    
 
-<div id="canvas-holder" style="width:40%">
+<div id="canvas-holder" >
   <canvas id="chart-area" />
 </div>
 
-<div>
-  <p>Now it's time for your voice to be heard! In the form below, we've provided the 11 most popular areas for state spending. Use the spaces provided to show how your state should spend its budget.<br>Fill in "0" for areas you'd like to leave blank.<br>Once all answers are filled in, click submit to view what the residents of your state are saying!</p>       
+<div id="directions">
+  <h2>Now it's time for your voice to be heard!</h2>
+  <p> In the form below enter the percent amount of your state's tax revenue that you want spent on each item. </p>       
 </div> 
 
 <div id="AnsweringForm">
   <form action="userdata" method="get" id="ResponseForm">
     <input type="hidden" name="state" value="{{statename}}">
-    Infrastructure:<br>
-    <input type="number" min="0" max="100" name="infrastructure" id="prop1"><br>
-    Education:<br>
-    <input type="number" min="0" max="100" name="education" id="prop2"><br>
-    Healthcare:<br>
-    <input type="number" min="0" max="100" name="healthcare" id="prop3"><br>
-    Libraries:<br>
-    <input type="number" min="0" max="100" name="libraries" id="prop4"><br>
-    Public Transportation:<br>
-    <input type="number" min="0" max="100" name="publictransportation" id="prop5"><br>
-    Economic Development:<br>
-    <input type="number" min="0" max="100" name="economicdevelopment" id="prop6"><br>
-    Parks and Recreation:<br>
-    <input type="number" min="0" max="100" name="parksandrecreation" id="prop7"><br>
-    Pension/Health Benefits to Public Employees:<br>
-    <input type="number" min="0" max="100" name="pensions" id="prop8"><br>
-    Assistance to Low-Income Households:<br>
-    <input type="number" min="0" max="100" name="lowincomeassistance" id="prop9"><br>
-    Corrections:<br>
-    <input type="number" min="0" max="100" name="corrections" id="prop10"><br>
-    Urban Housing:<br>
-    <input type="number" min="0" max="100" name="urbanhousing" id="prop11"><br>
+    Infrastructure:
+    <input type="number" min="0" max="100" name="infrastructure" id="prop1" value="0"><br><br>
+    Education:
+    <input type="number" min="0" max="100" name="education" id="prop2" value="0"><br><br>
+    Healthcare:
+    <input type="number" min="0" max="100" name="healthcare" id="prop3" value="0"><br><br>
+    Libraries:
+    <input type="number" min="0" max="100" name="libraries" id="prop4" value="0"><br><br>
+    Public Transportation:
+    <input type="number" min="0" max="100" name="publictransportation" id="prop5" value="0"><br><br>
+    Economic Development:
+    <input type="number" min="0" max="100" name="economicdevelopment" id="prop6" value="0"><br><br>
+    Parks and Recreation:
+    <input type="number" min="0" max="100" name="parksandrecreation" id="prop7" value="0"><br><br>
+    Pension/Health Benefits to Public Employees:
+    <input type="number" min="0" max="100" name="pensions" id="prop8" value="0"><br><br>
+    Assistance to Low-Income Households:
+    <input type="number" min="0" max="100" name="lowincomeassistance" id="prop9" value="0"><br><br>
+    Corrections:
+    <input type="number" min="0" max="100" name="corrections" id="prop10" value="0"><br><br>
+    Urban Housing:
+    <input type="number" min="0" max="100" name="urbanhousing" id="prop11" value="0"><br><br>
     <input type="submit">
   </form>
 </div>
