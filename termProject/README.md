@@ -57,7 +57,7 @@ The code necessary to access the database is as follows:
     mongoimport --db project --collection taxdata --type csv --headerline CleanedTaxData.csv
 
 
-Once all of the npm libraries are installed and mongoDB is running the database, the project can be run using a node command in the Terminal, "node app.js"
+Once all of the npm libraries are installed and mongoDB is running the database, the project can be run using a node command in the Terminal, `node app.js`
 
 This command should return the string "Example app listening on port 3000!"
 Once the server is up and running, enter "http://localhost:3000" in your browser, following the instructions from there!
